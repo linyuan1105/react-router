@@ -17,13 +17,6 @@ export default function App() {
     <div>
       <h1>Custom Filter Link Example</h1>
 
-      <p>
-        This example demonstrates how to create a "filter link" like one that is
-        commonly used to filter a list of products on an e-commerce website. The
-        <code>&lt;BrandLink&gt;</code> component is a custom{" "}
-        <code>&lt;Link&gt;</code> that knows whether or not it is currently
-        "active" by what is in the URL query string.
-      </p>
 
       <Routes>
         <Route path="/" element={<Layout />}>
@@ -136,7 +129,7 @@ function SneakerGrid() {
 }
 
 function SneakerView() {
-  let { id } = useParams<"id">();
+  let { id } = useParams();
 
   if (!id) {
     return <NoMatch />;
