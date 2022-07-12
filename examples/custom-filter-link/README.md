@@ -127,3 +127,24 @@ function SneakerGrid() {
 }
 
 ```
+
+
+## 本章小点
+>+ useSearchParams  获取URL的query参数
+>+ useParams 获取正则路由上设置的参数
+>+ React.useMemo 响应式数据，
+```javascript
+// React.useMemo 响应式数据，
+
+// 得到url上的query
+let [searchParams] = useSearchParams();
+// 获取具体字段
+let brand = searchParams.get("brand");
+
+// 建立依赖关系
+const sneakers = React.useMemo(() => {
+if (!brand) return SNEAKERS;
+return filterByBrand(brand);
+}, [brand]);
+```
+

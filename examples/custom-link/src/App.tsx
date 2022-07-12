@@ -33,9 +33,11 @@ export default function App() {
 }
 
 function CustomLink({ children, to, ...props }: LinkProps) {
+    console.log(to,'to')
   let resolved = useResolvedPath(to);
   let match = useMatch({ path: resolved.pathname, end: true });
-
+    console.log(resolved, 'resolved')
+    console.log(match, 'match')
   return (
     <div>
       <Link
